@@ -1,0 +1,1 @@
+alter table agendas modify column data_atendimento datetime;
