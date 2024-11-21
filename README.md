@@ -39,17 +39,17 @@ Este repositório contém o código de uma API de agendamento médico, desenvolv
    ```bash
    git clone https://github.com/jrcosta/curso-springboot-alura.git
    ```
-2. Configure o banco de dados MySQL no arquivo `application.properties`:
+2. Crie o schema vollmed_api no MySQL e configure no arquivo `application.properties`:
    ```properties
    spring.datasource.url=jdbc:mysql://localhost:3306/nome_do_banco
    spring.datasource.username=seu_usuario
    spring.datasource.password=sua_senha
    ```
-3. Execute as migrações do Flyway ao iniciar o projeto.
+3. As migration são executadas pelo Flyway ao iniciar o projeto.
 
 4. Inicie a aplicação:
-   ```bash
-   ./mvnw spring-boot:run
+   ```
+   src/main/java/med/voll/api/ApiApplication.java
    ```
 
 ---
