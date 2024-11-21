@@ -1,7 +1,7 @@
 
 # Curso Spring Boot - API de Agendamento Médico
 
-Este repositório contém o código de uma API de agendamento médico, desenvolvida como parte do aprendizado em **Spring Boot 3**. O projeto tem como objetivo consolidar conhecimentos em desenvolvimento backend, aplicando boas práticas de organização de código, como os padrões **Entity**, **Service** e **Repository**.
+Este repositório contém o código de uma API de agendamento médico, desenvolvida como parte do aprendizado em **Spring Boot 3**. O projeto tem como objetivo consolidar conhecimentos em desenvolvimento backend, aplicando boas práticas de organização de código.
 
 ---
 
