@@ -1,0 +1,21 @@
+# Pastas de configurações do IntelliJ IDEA
+.idea/
+
+# Pastas de configurações do Visual Studio Code
+.vscode/
+
+# Outros arquivos e pastas comuns a ignorar
+*.log
+*.tmp
+*.swp
+
+# Arquivos de build
+/build/
+/target/
+
+# Dependências instaladas por gerenciadores de pacotes (se aplicável)
+node_modules/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
