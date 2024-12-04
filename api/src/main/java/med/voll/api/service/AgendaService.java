@@ -14,7 +14,28 @@ public class AgendaService {
     private AgendaRepository agendaRepository;
 
     @Transactional
-    public void cadastrarAgendamento(DadosCadastroAgendamentoDTO dados) {
-        agendaRepository.save(new Agenda(dados));
+    public Agenda cadastrarAgendamento(DadosCadastroAgendamentoDTO dados) {
+        return agendaRepository.save(new Agenda(dados));
+    }
+
+    @Transactional
+    public void deletarAgendamento(Long id) {
+        Agenda agenda = agendaRepository.getReferenceById(id);
+        agenda.deletarAgendamento();
+    }
+
+    @Transactional
+    public Agenda buscarAgendamentoPorId(Long id) {
+        return agendaRepository.getReferenceById(id);
+    }
+
+    @Transactional
+    public void atualizarAgendamento(Agenda agenda) {
+        agendaRepository.save(agenda);
+    }
+
+    @Transactional
+    public Agenda detalharAgendamento(Long id) {
+        return agendaRepository.getReferenceById(id);
     }
 }

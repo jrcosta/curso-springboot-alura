@@ -35,6 +35,10 @@ public class Agenda {
         this.data_atendimento = dados.data_atendimento();
         this.especialidade_id = dados.especialidade_id();
         this.status = true;
-        this.observacao = "";
+        this.observacao = dados.observacao();
+    }
+
+    public void deletarAgendamento() {
+        this.status = false;
     }
 }

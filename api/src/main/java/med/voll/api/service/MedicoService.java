@@ -19,14 +19,15 @@ public class MedicoService {
     private MedicoRepository medicoRepository;
 
     @Transactional
-    public void cadastrarMedico(DadosCadastroMedicoDTO dadosCadastroMedicoDTO) {
-        medicoRepository.save(new Medico(dadosCadastroMedicoDTO));
+    public Medico cadastrarMedico(DadosCadastroMedicoDTO dadosCadastroMedicoDTO) {
+        return medicoRepository.save(new Medico(dadosCadastroMedicoDTO));
     }
 
     @Transactional
-    public void atualizarMedico(DadosAtualizacaoMedicoDTO dadosAtualizacaoMedicoDTO) {
+    public Medico atualizarMedico(DadosAtualizacaoMedicoDTO dadosAtualizacaoMedicoDTO) {
         Medico medico = medicoRepository.getReferenceById(dadosAtualizacaoMedicoDTO.id());
         medico.atualizarMedico(dadosAtualizacaoMedicoDTO);
+        return medico;
     }
 
     @Transactional
