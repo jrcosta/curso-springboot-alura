@@ -1,9 +1,8 @@
 package med.voll.api.dto;
 
+import java.util.List;
 import lombok.Getter;
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 @Getter
 public class PaginatedResponse<T> {
@@ -22,5 +21,4 @@ public class PaginatedResponse<T> {
         this.totalPages = page.getTotalPages();
         this.last = page.isLast();
     }
-
 }

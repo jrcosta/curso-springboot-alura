@@ -12,13 +12,13 @@ import med.voll.api.dto.endereco.DadosEnderecoDTO;
 @AllArgsConstructor
 public class Endereco {
 
-        private String logradouro;
-        private String bairro;
-        private String cep;
-        private String cidade;
-        private String uf;
-        private String numero;
-        private String complemento;
+    private String logradouro;
+    private String bairro;
+    private String cep;
+    private String cidade;
+    private String uf;
+    private String numero;
+    private String complemento;
 
     public Endereco(DadosEnderecoDTO endereco) {
         this.logradouro = endereco.logradouro();

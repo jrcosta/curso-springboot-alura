@@ -12,6 +12,4 @@ public record DadosCadastroPacienteDTO(
         @NotBlank @Email String email,
         @NotBlank String telefone,
         @NotBlank @Pattern(regexp = "\\d{3}\\.?\\d{3}\\.?\\d{3}\\-?\\d{2}") String cpf,
-        @NotNull @Valid DadosEnderecoDTO endereco
-) {
-}
+        @NotNull @Valid DadosEnderecoDTO endereco) {}

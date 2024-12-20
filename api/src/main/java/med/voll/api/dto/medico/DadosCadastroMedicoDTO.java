@@ -9,19 +9,9 @@ import med.voll.api.dto.endereco.DadosEnderecoDTO;
 import med.voll.api.entity.Especialidade;
 
 public record DadosCadastroMedicoDTO(
-        @NotBlank
-        String nome,
-        @NotBlank
-        @Email
-        String email,
-        @NotBlank
-        String telefone,
-        @NotBlank
-        @Pattern(regexp = "\\d{4,6}")
-        String crm,
-        @NotNull
-        Especialidade especialidade,
-        @NotNull
-        @Valid
-        DadosEnderecoDTO endereco) {
-}
+        @NotBlank String nome,
+        @NotBlank @Email String email,
+        @NotBlank String telefone,
+        @NotBlank @Pattern(regexp = "\\d{4,6}") String crm,
+        @NotNull Especialidade especialidade,
+        @NotNull @Valid DadosEnderecoDTO endereco) {}

@@ -15,8 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MedicoService {
 
-    @Autowired
-    private MedicoRepository medicoRepository;
+    @Autowired private MedicoRepository medicoRepository;
 
     @Transactional
     public Medico cadastrarMedico(DadosCadastroMedicoDTO dadosCadastroMedicoDTO) {
@@ -45,5 +44,4 @@ public class MedicoService {
     public Medico buscarMedicoPorId(Long id) {
         return medicoRepository.getReferenceById(id);
     }
-
 }

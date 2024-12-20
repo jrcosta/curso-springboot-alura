@@ -22,12 +22,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("pacientes")
 public class PacienteController {
 
-    @Autowired
-    private PacienteService pacienteService;
+    @Autowired private PacienteService pacienteService;
 
     @PostMapping
     @Transactional
-    public ResponseEntity<DadosDetalhamentoPacienteDTO> cadastrarPaciente(@RequestBody @Valid DadosCadastroPacienteDTO dados, UriComponentsBuilder uriBuilder) {
+    public ResponseEntity<DadosDetalhamentoPacienteDTO> cadastrarPaciente(
+            @RequestBody @Valid DadosCadastroPacienteDTO dados, UriComponentsBuilder uriBuilder) {
         Paciente paciente = pacienteService.cadastrarPaciente(dados);
 
         var uri = uriBuilder.path("/pacientes/{id}").buildAndExpand(paciente.getId()).toUri();
@@ -36,14 +36,20 @@ public class PacienteController {
     }
 
     @GetMapping
-    public ResponseEntity <PaginatedResponse<DadosListagemPacienteDTO>> listarPaciente(@PageableDefault(page = 0, size = 10, sort = {"nome"}) Pageable paginacao) {
+    public ResponseEntity<PaginatedResponse<DadosListagemPacienteDTO>> listarPaciente(
+            @PageableDefault(
+                            page = 0,
+                            size = 10,
+                            sort = {"nome"})
+                    Pageable paginacao) {
         Page<DadosListagemPacienteDTO> page = pacienteService.listarPacientes(paginacao);
         return ResponseEntity.ok(new PaginatedResponse<>(page));
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity<DadosAtualizacaoPacienteDTO> atualizarPaciente(@RequestBody @Valid DadosAtualizacaoPacienteDTO dadosAtualizacaoPacienteDTO) {
+    public ResponseEntity<DadosAtualizacaoPacienteDTO> atualizarPaciente(
+            @RequestBody @Valid DadosAtualizacaoPacienteDTO dadosAtualizacaoPacienteDTO) {
         pacienteService.atualizarPaciente(dadosAtualizacaoPacienteDTO);
 
         return ResponseEntity.ok().build();

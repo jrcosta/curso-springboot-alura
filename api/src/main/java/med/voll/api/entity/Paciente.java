@@ -25,8 +25,7 @@ public class Paciente {
     private String cpf;
     private String telefone;
 
-    @Embedded
-    private Endereco endereco;
+    @Embedded private Endereco endereco;
 
     private boolean status;
 

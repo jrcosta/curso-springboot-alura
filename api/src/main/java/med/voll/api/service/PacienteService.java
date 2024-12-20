@@ -14,8 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PacienteService {
 
-    @Autowired
-    private PacienteRepository pacienteRepository;
+    @Autowired private PacienteRepository pacienteRepository;
 
     @Transactional
     public Paciente cadastrarPaciente(DadosCadastroPacienteDTO dados) {

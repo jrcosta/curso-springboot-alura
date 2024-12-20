@@ -14,14 +14,17 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("agendas")
 public class AgendaController {
 
-    @Autowired
-    private AgendaService agendaService;
+    @Autowired private AgendaService agendaService;
 
     @PostMapping
-    public ResponseEntity<DadosDetalhamentoAgendamentoDTO> cadastrarAgendamento(@RequestBody @Valid DadosCadastroAgendamentoDTO dados) {
+    public ResponseEntity<DadosDetalhamentoAgendamentoDTO> cadastrarAgendamento(
+            @RequestBody @Valid DadosCadastroAgendamentoDTO dados) {
         Agenda agenda = agendaService.cadastrarAgendamento(dados);
 
-        var uri = UriComponentsBuilder.fromPath("/agendas/{id}").buildAndExpand(agenda.getId()).toUri();
+        var uri =
+                UriComponentsBuilder.fromPath("/agendas/{id}")
+                        .buildAndExpand(agenda.getId())
+                        .toUri();
 
         return ResponseEntity.created(uri).body(new DadosDetalhamentoAgendamentoDTO(agenda));
     }

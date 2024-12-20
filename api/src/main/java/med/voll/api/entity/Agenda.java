@@ -1,13 +1,12 @@
 package med.voll.api.entity;
 
 import jakarta.persistence.*;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.dto.agenda.DadosCadastroAgendamentoDTO;
-
-import java.util.Date;
 
 @Table(name = "agendas")
 @Entity(name = "Agenda")
@@ -20,6 +19,7 @@ public class Agenda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Long medico_id;
     private Long paciente_id;
     private Date data_agendamento;

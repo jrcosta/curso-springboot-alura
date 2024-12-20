@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AgendaService {
 
-    @Autowired
-    private AgendaRepository agendaRepository;
+    @Autowired private AgendaRepository agendaRepository;
 
     @Transactional
     public Agenda cadastrarAgendamento(DadosCadastroAgendamentoDTO dados) {

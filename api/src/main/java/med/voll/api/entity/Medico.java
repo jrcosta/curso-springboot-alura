@@ -1,6 +1,5 @@
 package med.voll.api.entity;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -20,6 +19,7 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String nome;
     private String email;
     private String telefone;
@@ -28,8 +28,7 @@ public class Medico {
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
-    @Embedded
-    private Endereco endereco;
+    @Embedded private Endereco endereco;
 
     private boolean status;
 
