@@ -4,6 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import med.voll.api.security.controller.DadosTokenJWT;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -41,5 +43,10 @@ public class GlobalExceptionHandler {
             return "";
         }
         return message.substring(0, 1).toUpperCase() + message.substring(1);
+    }
+
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<DadosTokenJWT> handleInvalidCredentials(InvalidCredentialsException ex) {
+        return ResponseEntity.status(401).body(new DadosTokenJWT(ex.getMessage()));
     }
 }

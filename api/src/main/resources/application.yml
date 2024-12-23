@@ -13,3 +13,7 @@ spring:
 server:
     error:
       include-stacktrace: never
+
+api:
+  security:
+    secret: ${JWT_SECRET:secret}
